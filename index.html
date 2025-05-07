@@ -23,8 +23,8 @@
         }
         .clock-grid {
             display: grid;
-            grid-template-columns: repeat(6, 150px);      /* Triple the size: 50px * 3 = 150px */
-            grid-template-rows: repeat(4, 150px);         /* Triple the size: 50px * 3 = 150px */
+            grid-template-columns: repeat(6, 150px);
+            grid-template-rows: repeat(4, 150px);
             gap: 12px;
             padding: 16px;
             border-radius: 12px;
@@ -39,6 +39,11 @@
             border-radius: 8px;
             background-color: rgba(255, 255, 255, 0.1);
             transition: background-color 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
         }
         .led-on {
             background-color: #00ffff;
@@ -102,20 +107,20 @@
 
                 for (let i = 0; i < 4; i++) {
                     if (binary[i] === '1') {
-                        ledsArray[i].classList.add('led-on');
+                        ledsArray[3 - i].classList.add('led-on');
                     } else {
-                        ledsArray[i].classList.remove('led-on');
+                        ledsArray[3 - i].classList.remove('led-on');
                     }
                 }
             }
 
             // Set the LEDs for hours, minutes, and seconds
-            setDigitLeds(hourDigits[0], [leds[0], leds[1], leds[2], leds[3]]);
-            setDigitLeds(hourDigits[1], [leds[4], leds[5], leds[6], leds[7]]);
-            setDigitLeds(minuteDigits[0], [leds[8], leds[9], leds[10], leds[11]]);
-            setDigitLeds(minuteDigits[1], [leds[12], leds[13], leds[14], leds[15]]);
-            setDigitLeds(secondDigits[0], [leds[16], leds[17], leds[18], leds[19]]);
-            setDigitLeds(secondDigits[1], [leds[20], leds[21], leds[22], leds[23]]);
+            setDigitLeds(hourDigits[0], [leds[08], leds[12], leds[6], leds[0]]);
+            setDigitLeds(hourDigits[1], [leds[19], leds[13], leds[7], leds[1]]);
+            setDigitLeds(minuteDigits[0], [leds[20], leds[14], leds[8], leds[2]]);
+            setDigitLeds(minuteDigits[1], [leds[21], leds[15], leds[9], leds[3]]);
+            setDigitLeds(secondDigits[0], [leds[22], leds[16], leds[10], leds[4]]);
+            setDigitLeds(secondDigits[1], [leds[23], leds[17], leds[11], leds[5]]);
         }
 
         // Update the clock every second
