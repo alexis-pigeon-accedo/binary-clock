@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binary Clock Layout</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,13 +11,14 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #000;
+            margin: 0;
         }
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            width: 100%; /* Set container width to 100% */
+            width: 100%;
             background-color: #000;
         }
         .clock-grid {
@@ -31,6 +31,7 @@
             background-color: #000;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             border: 2px solid #000;
+            margin: auto;
         }
         .led {
             width: 100%;
@@ -74,7 +75,6 @@
             <div class="led" id="led-23"></div>
         </div>
     </div>
-
     <script>
         // This code is licensed under the GPL v3 License.
         // See: https://www.gnu.org/licenses/gpl-3.0.en.html
